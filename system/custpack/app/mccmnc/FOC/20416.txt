@@ -1,0 +1,3 @@
+# Copyright (C) 2016 Tcl Corporation Limited
+custpack:AppStarter-4.3.15-build_1279-Release-signed-aligned.apk
+priv-app:AppEnabler-4.3.15-build_1280-API22-Release-signed-aligned.apk

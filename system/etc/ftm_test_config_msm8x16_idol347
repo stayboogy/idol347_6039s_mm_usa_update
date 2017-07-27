@@ -1,0 +1,222 @@
+#IDOL3 4.7 realtime afe loopback test
+#HeadSet Mic(tert3) to Headset speaker(sec2) AFE loopback
+tc 52
+!AfeLoop
+Txdevice:11
+Rxdevice:0
+
+enable
+DEC1 MUX:ADC2
+ADC2 MUX:INP2
+ADC2 Volume:2
+AKM HP:on
+SEC_MI2S_RX Port Mixer TERT_MI2S_TX:1
+MultiMedia1 Mixer TERT_MI2S_TX:1
+SEC_MI2S_RX Audio Mixer MultiMedia1:1
+
+disable
+DEC1 MUX:ZERO
+ADC2 MUX:ZERO
+AKM HP:off
+ADC2 Volume:2
+SEC_MI2S_RX Port Mixer TERT_MI2S_TX:0
+MultiMedia1 Mixer TERT_MI2S_TX:0
+SEC_MI2S_RX Audio Mixer MultiMedia1:0
+
+
+#MAIN Mic(tert3) to speaker(Q4) AFE loopback
+tc 53
+!AfeLoop
+Txdevice:11
+Rxdevice:0
+
+enable
+DEC1 MUX:ADC1
+ADC1 Volume:2
+TFA98XX_FTM_RCV_TOP:On
+MultiMedia1 Mixer TERT_MI2S_TX:1
+QUAT_MI2S_RX Audio Mixer MultiMedia1:1
+QUAT_MI2S_RX Port Mixer TERT_MI2S_TX:1
+
+
+disable
+DEC1 MUX:ZERO
+ADC1 Volume:2
+TFA98XX_FTM_RCV_TOP:Off
+MultiMedia1 Mixer TERT_MI2S_TX:0
+QUAT_MI2S_RX Audio Mixer MultiMedia1:0
+QUAT_MI2S_RX Port Mixer TERT_MI2S_TX:0
+
+
+#REF Mic(tert3) to speaker(Q4) AFE loopback
+tc 54
+!AfeLoop
+Txdevice:11
+Rxdevice:0
+
+enable
+DEC1 MUX:ADC2
+ADC2 MUX:INP3
+ADC2 Volume:2
+TFA98XX_FTM_RCV_BTM:On
+MultiMedia1 Mixer TERT_MI2S_TX:1
+QUAT_MI2S_RX Audio Mixer MultiMedia1:1
+QUAT_MI2S_RX Port Mixer TERT_MI2S_TX:1
+
+disable
+DEC1 MUX:ZERO
+ADC2 MUX:ZERO
+ADC2 Volume:2
+TFA98XX_FTM_RCV_BTM:Off
+MultiMedia1 Mixer TERT_MI2S_TX:0
+QUAT_MI2S_RX Audio Mixer MultiMedia1:0
+QUAT_MI2S_RX Port Mixer TERT_MI2S_TX:0
+
+#IDOL3 4.7 HeadSet Mic(T3) to speaker top(Q4) AFE loopback
+tc 55
+!AfeLoop
+Txdevice:11
+Rxdevice:0
+
+enable
+DEC1 MUX:ADC2
+ADC2 MUX:INP2
+ADC2 Volume:2
+TFA98XX_FTM_SPK_TOP:On
+QUAT_MI2S_RX Port Mixer TERT_MI2S_TX:1
+MultiMedia1 Mixer TERT_MI2S_TX:1
+QUAT_MI2S_RX Audio Mixer MultiMedia1:1
+
+disable
+DEC1 MUX:ZERO
+ADC2 MUX:ZERO
+ADC2 Volume:2
+TFA98XX_FTM_SPK_TOP:Off
+QUAT_MI2S_RX Port Mixer TERT_MI2S_TX:0
+MultiMedia1 Mixer TERT_MI2S_TX:0
+QUAT_MI2S_RX Audio Mixer MultiMedia1:0
+
+
+
+#IDOL3 4.7 HeadSet Mic(T3) to speaker btm(Q4) AFE loopback
+tc 56
+!AfeLoop
+Txdevice:11
+Rxdevice:0
+
+enable
+DEC1 MUX:ADC2
+ADC2 MUX:INP2
+ADC2 Volume:2
+TFA98XX_FTM_SPK_BTM:On
+QUAT_MI2S_RX Port Mixer TERT_MI2S_TX:1
+MultiMedia1 Mixer TERT_MI2S_TX:1
+QUAT_MI2S_RX Audio Mixer MultiMedia1:1
+
+disable
+DEC1 MUX:ZERO
+ADC2 MUX:ZERO
+ADC2 Volume:2
+TFA98XX_FTM_SPK_BTM:Off
+QUAT_MI2S_RX Port Mixer TERT_MI2S_TX:0
+MultiMedia1 Mixer TERT_MI2S_TX:0
+QUAT_MI2S_RX Audio Mixer MultiMedia1:0
+
+
+#IDOL3 4.7 HeadSet Mic(T3) to rcv top(Q4) AFE loopback
+tc 57
+!AfeLoop
+Txdevice:11
+Rxdevice:0
+
+enable
+DEC1 MUX:ADC2
+ADC2 MUX:INP2
+ADC2 Volume:2
+TFA98XX_FTM_RCV_TOP:On
+QUAT_MI2S_RX Port Mixer TERT_MI2S_TX:1
+MultiMedia1 Mixer TERT_MI2S_TX:1
+QUAT_MI2S_RX Audio Mixer MultiMedia1:1
+
+disable
+DEC1 MUX:ZERO
+ADC2 MUX:ZERO
+ADC2 Volume:2
+TFA98XX_FTM_RCV_TOP:Off
+QUAT_MI2S_RX Port Mixer TERT_MI2S_TX:0
+MultiMedia1 Mixer TERT_MI2S_TX:0
+QUAT_MI2S_RX Audio Mixer MultiMedia1:0
+
+
+#IDOL3 4.7 HeadSet Mic(T3) to rcv btm(Q4) AFE loopback
+tc 58
+!AfeLoop
+Txdevice:11
+Rxdevice:0
+
+enable
+DEC1 MUX:ADC2
+ADC2 MUX:INP2
+ADC2 Volume:2
+TFA98XX_FTM_RCV_BTM:On
+QUAT_MI2S_RX Port Mixer TERT_MI2S_TX:1
+MultiMedia1 Mixer TERT_MI2S_TX:1
+QUAT_MI2S_RX Audio Mixer MultiMedia1:1
+
+disable
+DEC1 MUX:ZERO
+ADC2 MUX:ZERO
+ADC2 Volume:2
+TFA98XX_FTM_RCV_BTM:Off
+QUAT_MI2S_RX Port Mixer TERT_MI2S_TX:0
+MultiMedia1 Mixer TERT_MI2S_TX:0
+QUAT_MI2S_RX Audio Mixer MultiMedia1:0
+
+
+#IDOL3 4.7 MAIN Mic(tert3) to headset(S2) AFE loopback
+tc 59
+!AfeLoop
+Txdevice:11
+Rxdevice:0
+
+enable
+DEC1 MUX:ADC1
+ADC1 Volume:2
+AKM HP:on
+MultiMedia1 Mixer TERT_MI2S_TX:1
+SEC_MI2S_RX Audio Mixer MultiMedia1:1
+SEC_MI2S_RX Port Mixer TERT_MI2S_TX:1
+
+disable
+DEC1 MUX:ZERO
+ADC1 Volume:2
+AKM HP:off
+MultiMedia1 Mixer TERT_MI2S_TX:0
+SEC_MI2S_RX Audio Mixer MultiMedia1:0
+SEC_MI2S_RX Port Mixer TERT_MI2S_TX:0
+
+
+#REF Mic(tert3) to headset(S2) AFE loopback
+tc 60
+!AfeLoop
+Txdevice:11
+Rxdevice:0
+
+enable
+DEC1 MUX:ADC2
+ADC2 MUX:INP3
+ADC2 Volume:2
+AKM HP:on
+MultiMedia1 Mixer TERT_MI2S_TX:1
+SEC_MI2S_RX Audio Mixer MultiMedia1:1
+SEC_MI2S_RX Port Mixer TERT_MI2S_TX:1
+
+
+disable
+DEC1 MUX:ZERO
+ADC2 MUX:ZERO
+ADC2 Volume:2
+AKM HP:off
+MultiMedia1 Mixer TERT_MI2S_TX:0
+SEC_MI2S_RX Audio Mixer MultiMedia1:0
+SEC_MI2S_RX Port Mixer TERT_MI2S_TX:0
